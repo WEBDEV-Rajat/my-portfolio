@@ -170,7 +170,7 @@ const Portfolio = () => {
       degree: "Intermediate (12th)",
       institution: "FIITJEE Junior College, Hyderabad",
       duration: "2020 - 2022",
-      score: "97.2%",
+      score: "95.1%",
       icon: BookOpen,
       color: "from-purple-500 to-pink-500",
     },
