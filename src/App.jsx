@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import {
   Github,
@@ -183,40 +183,94 @@ const Portfolio = () => {
     },
   ];
 
-  const BackgroundGradient = () => (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+const BackgroundGradient = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  return (
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      {/* Deep Animated Mesh Gradient */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20"
+        className="absolute inset-0 opacity-50"
         animate={{
           background: [
-            "radial-gradient(circle at 20% 50%, rgba(120, 0, 255, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%)",
-            "radial-gradient(circle at 80% 50%, rgba(255, 0, 180, 0.15) 0%, transparent 50%), radial-gradient(circle at 20% 20%, rgba(0, 180, 255, 0.15) 0%, transparent 50%)",
-            "radial-gradient(circle at 20% 50%, rgba(120, 0, 255, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.3) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.2) 0%, transparent 60%)",
+            "radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.3) 0%, transparent 50%), radial-gradient(circle at 20% 20%, rgba(236, 72, 153, 0.3) 0%, transparent 50%), radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.2) 0%, transparent 60%)",
           ],
         }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
 
-      <motion.div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-        }}
-        animate={{
-          backgroundPosition: ["0px 0px", "50px 50px"],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
+      {/* Neon Grid Parallax */}
+      <div className="absolute inset-0 opacity-15">
+        <motion.div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(168, 85, 247, 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(168, 85, 247, 0.2) 1px, transparent 1px)
+            `,
+            backgroundSize: "100px 100px",
+          }}
+          animate={{
+            backgroundPosition: ["0px 0px", "100px 100px"],
+          }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+
+      {/* Mouse-Reactive Glowing Orbs */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-96 h-96 rounded-full blur-3xl"
+          style={{
+            background: i % 2 ? "radial-gradient(circle, rgba(236, 72, 153, 0.35), transparent 70%)" : "radial-gradient(circle, rgba(6, 182, 212, 0.35), transparent 70%)",
+            left: `${10 + i * 15}%`,
+            top: `${10 + i * 10}%`,
+            x: mousePosition.x ? (mousePosition.x - window.innerWidth / 2) * 0.05 * (i % 2 ? 1 : -1) : 0,
+            y: mousePosition.y ? (mousePosition.y - window.innerHeight / 2) * 0.05 * (i % 3 ? 1 : -1) : 0,
+          }}
+          animate={{
+            scale: [1, 1.4, 1],
+          }}
+          transition={{ duration: 10 + i * 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+      ))}
+
+      {/* Floating Sparks & Shapes */}
+      {[...Array(15)].map((_, i) => (
+        <motion.div
+          key={`spark-${i}`}
+          className="absolute text-yellow-300"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, -200, 0],
+            opacity: [0, 1, 0],
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 8 + Math.random() * 10,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+          }}
+        >
+          <Sparkles size={20 + Math.random() * 20} />
+        </motion.div>
+      ))}
     </div>
   );
+};
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
