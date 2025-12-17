@@ -19,10 +19,10 @@ import {
 } from "lucide-react";
 
 import "./App.css";
-import { image } from "framer-motion/client";
 import img1 from "./assets/img1.png";
 import img2 from "./assets/img2.png";
 import img3 from "./assets/img3.png";
+import pdf from "./assets/Rajat_Bagaddeo.pdf";
 
 const Portfolio = () => {
   const { scrollYProgress } = useScroll();
@@ -46,7 +46,6 @@ const Portfolio = () => {
     e.preventDefault();
     setFormStatus("sending");
 
-    // Simulate form submission
     setTimeout(() => {
       setFormStatus("success");
       setFormData({ name: "", email: "", message: "" });
@@ -242,7 +241,6 @@ const Portfolio = () => {
           >
             <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">RB</span>
           </motion.a>
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {["Projects", "Skills", "Education", "Contact"].map((item) => (
               <motion.button
@@ -261,7 +259,6 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <motion.button
             className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -271,7 +268,6 @@ const Portfolio = () => {
           </motion.button>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <motion.div
             className="md:hidden bg-black/95 backdrop-blur-lg border-t border-purple-500/30"
@@ -296,7 +292,6 @@ const Portfolio = () => {
         )}
       </motion.nav>
 
-      {/* Hero Section */}
       <motion.section
         className="min-h-screen flex items-center justify-center px-4 py-12 relative pt-20"
         initial={{ opacity: 0 }}
@@ -416,7 +411,7 @@ const Portfolio = () => {
           <motion.button
             onClick={() => {
               const link = document.createElement("a");
-              link.href = "/Rajat_Bagaddeo.pdf";
+              link.href = pdf;
               link.download = "Rajat_Bagaddeo.pdf";
               document.body.appendChild(link);
               link.click();
@@ -425,7 +420,7 @@ const Portfolio = () => {
             className="font-bold rounded-full px-14 py-6 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 shadow-2xl relative group overflow-hidden cursor-pointer"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{duration: 0.8 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -454,7 +449,6 @@ const Portfolio = () => {
         </div>
       </motion.section>
 
-      {/* Projects Section */}
       <section id="projects" className="py-32 px-4 max-w-7xl mx-auto relative">
         <motion.h2 className="text-5xl md:text-7xl font-black text-center mr-25 mb-20 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent flex items-center justify-center gap-6">
           <Code size={60} />
@@ -546,7 +540,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="py-32 px-4 max-w-7xl mx-auto relative">
         <motion.h2 className="text-5xl md:text-7xl font-black text-center mr-25 mb-20 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent flex items-center justify-center gap-6">
           <Zap size={60} />
@@ -594,7 +587,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Education Section */}
       <section
         id="education"
         className="py-32 px-4 max-w-7xl mx-auto relative"
@@ -708,7 +700,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-32 px-4 max-w-4xl mx-auto relative">
         <motion.h2 className="text-5xl md:text-7xl font-black text-center mr-25 mb-14 bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent flex items-center justify-center gap-6">
           <MessageSquare size={60} />
@@ -844,7 +835,6 @@ const Portfolio = () => {
             )}
           </form>
 
-          {/* Contact Info */}
           <div className="mt-12 pt-8 border-t border-white/10 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.a
