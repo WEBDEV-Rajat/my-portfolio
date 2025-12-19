@@ -17,10 +17,10 @@ import {
   X,
 } from "lucide-react";
 import "./App.css";
-import img1 from './assets/img1.png';
-import img2 from './assets/img2.png';
-import img3 from './assets/img3.png';
-import pdf from './assets/Rajat_Bagaddeo.pdf';
+import img1 from "./assets/img1.png";
+import img2 from "./assets/img2.png";
+import img3 from "./assets/img3.png";
+import pdf from "./assets/Rajat_Bagaddeo.pdf";
 
 const Portfolio = () => {
   const { scrollYProgress } = useScroll();
@@ -62,8 +62,16 @@ const Portfolio = () => {
       name: "ExpenseGuru",
       tagline: "Smart Money Management Made Simple",
       date: "Nov 2024 - Dec 2024",
-      image : img1,
-      tech: ["React.js", "Tailwind CSS", "MongoDB", "Node.js", "Express.js", "Redux Toolkit", "JWT"],
+      image: img1,
+      tech: [
+        "React.js",
+        "Tailwind CSS",
+        "MongoDB",
+        "Node.js",
+        "Express.js",
+        "Redux Toolkit",
+        "JWT",
+      ],
       features: [
         "Transaction management with chronological sorting",
         "Dynamic visualizations for income/expense analysis",
@@ -78,8 +86,16 @@ const Portfolio = () => {
       name: "Chatty",
       tagline: "Seamless Real-Time Connectivity",
       date: "June 2025",
-      image : img2,
-      tech: ["React.js", "Tailwind CSS", "Zustand", "MongoDB", "Socket.IO", "Cloudinary", "JWT"],
+      image: img2,
+      tech: [
+        "React.js",
+        "Tailwind CSS",
+        "Zustand",
+        "MongoDB",
+        "Socket.IO",
+        "Cloudinary",
+        "JWT",
+      ],
       features: [
         "Real-time messaging with instant updates",
         "Theme and color customization",
@@ -95,8 +111,16 @@ const Portfolio = () => {
       name: "Morphio",
       tagline: "Smart File Editing and Conversion Tool",
       date: "Oct 2025",
-      image : img3,
-      tech: ["Electron.js", "Node.js", "React.js", "Tailwind CSS", "Sharp", "Ghostscript", "QPDF"],
+      image: img3,
+      tech: [
+        "Electron.js",
+        "Node.js",
+        "React.js",
+        "Tailwind CSS",
+        "Sharp",
+        "Ghostscript",
+        "QPDF",
+      ],
       features: [
         "All-in-one desktop utility for file operations",
         "Word/PPT/Image to PDF conversion",
@@ -113,12 +137,26 @@ const Portfolio = () => {
   const skills = {
     languages: ["C++"],
     tools: ["Git", "Github", "VS Code", "Postman"],
-    frameworks: ["React.js", "Express.js", "Node.js", "Tailwind CSS", "Redux Toolkit", "Zustand"],
+    frameworks: [
+      "React.js",
+      "Express.js",
+      "Node.js",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "Zustand",
+    ],
     databases: ["MongoDB"],
-    interests: ["DSA", "OOP", "Web Development", "Operating Systems", "DBMS", "Computer Networks"],
+    interests: [
+      "DSA",
+      "OOP",
+      "Web Development",
+      "Operating Systems",
+      "DBMS",
+      "Computer Networks",
+    ],
   };
 
-   const education = [
+  const education = [
     {
       degree: "B.Tech in Electrical Engineering",
       institution: "Motilal Nehru National Institute of Technology, Allahabad",
@@ -333,7 +371,9 @@ const Portfolio = () => {
       >
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <motion.a href="/" whileHover={{ scale: 1.05 }}>
-            <span className="text-2xl font-bold font-mono text-cyan-400">{'<RB/>'}</span>
+            <span className="text-2xl font-bold font-mono text-cyan-400">
+              {"<RB/>"}
+            </span>
           </motion.a>
           <div className="hidden md:flex items-center gap-8">
             {["Projects", "Skills", "Education", "Contact"].map((item) => (
@@ -437,7 +477,12 @@ const Portfolio = () => {
             <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-cyan-400 rounded-bl-2xl" />
             <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-cyan-400 rounded-br-2xl" />
 
-            {[[0, 0], [0, 100], [100, 0], [100, 100]].map(([top, left], i) => (
+            {[
+              [0, 0],
+              [0, 100],
+              [100, 0],
+              [100, 100],
+            ].map(([top, left], i) => (
               <motion.div
                 key={i}
                 className="absolute w-3 h-3 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
@@ -477,10 +522,12 @@ const Portfolio = () => {
               <motion.span
                 className="relative inline-block text-cyan-400"
                 style={{
-                  textShadow: "0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.3)",
+                  textShadow:
+                    "0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.3)",
                 }}
                 whileHover={{
-                  textShadow: "0 0 30px rgba(0, 229, 255, 0.8), 0 0 60px rgba(0, 229, 255, 0.5)",
+                  textShadow:
+                    "0 0 30px rgba(0, 229, 255, 0.8), 0 0 60px rgba(0, 229, 255, 0.5)",
                 }}
               >
                 RAJAT
@@ -623,13 +670,21 @@ const Portfolio = () => {
       </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-32 px-4 max-w-7xl mx-auto relative">
-        <motion.h2 className="text-5xl md:text-7xl font-black text-center mb-20 font-mono flex items-center justify-center gap-6">
-          <Code size={60} className="text-cyan-400" />
+      <section
+        id="projects"
+        className="py-16 px-4 md:py-24 lg:py-32 max-w-7xl mx-auto relative"
+      >
+        <motion.h2
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center mb-12 sm:mb-16 md:mb-20 font-mono flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <Code size={40} className="text-cyan-400 sm:size-12 md:size-16" />
           <span className="text-cyan-400">FEATURED_PROJECTS</span>
         </motion.h2>
 
-        <div className="flex flex-col gap-20">
+        <div className="grid grid-cols-1 lg:ml-16 lg:mr-16 gap-12 lg:gap-20">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
@@ -641,37 +696,49 @@ const Portfolio = () => {
               whileHover={{ y: -10 }}
             >
               <motion.div
-                className="relative rounded-2xl p-8 ml-20 mr-20 bg-black border-2 backdrop-blur-lg shadow-2xl overflow-hidden"
-                style={{
-                  borderColor: "rgba(0, 229, 255, 0.3)",
-                }}
+                className="relative rounded-2xl p-6 sm:p-8 bg-black border-2 backdrop-blur-lg shadow-2xl overflow-hidden"
+                style={{ borderColor: "rgba(0, 229, 255, 0.3)" }}
                 whileHover={{
                   boxShadow: "0 0 40px rgba(0, 229, 255, 0.5)",
                   borderColor: "rgba(0, 229, 255, 0.6)",
                 }}
               >
+                {/* Project Active Indicator */}
                 <div className="absolute top-4 left-4 flex items-center gap-2 text-xs text-cyan-400 font-mono">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
                   <span>PROJECT_ACTIVE</span>
                 </div>
 
-                <img src={project.image} alt={project.name} className="mt-5 rounded-2xl" />
+                {/* Project Image - Responsive */}
+                <div className="mt-8 sm:mt-10 w-full">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-auto rounded-xl object-cover shadow-lg"
+                  />
+                </div>
 
-                <h3 className="text-4xl font-bold mb-2 relative z-10 text-white font-mono mt-8">
+                {/* Title */}
+                <h3 className="text-3xl sm:text-4xl font-bold mb-2 text-white font-mono mt-8">
                   {project.name}
                 </h3>
-                <p className="text-gray-300 mb-2 relative z-10 font-mono text-lg">
+
+                {/* Tagline */}
+                <p className="text-gray-300 mb-2 font-mono text-base sm:text-lg">
                   // {project.tagline}
                 </p>
-                <span className="text-sm text-cyan-400 relative z-10 font-mono">
+
+                {/* Date */}
+                <span className="text-sm text-cyan-400 font-mono">
                   [{project.date}]
                 </span>
 
-                <div className="flex flex-wrap gap-2 my-6 relative z-10">
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 my-6">
                   {project.tech.map((tech, i) => (
                     <motion.span
                       key={i}
-                      className="px-4 py-2 bg-slate-900/60 border border-cyan-500/30 rounded-lg text-sm backdrop-blur font-mono text-cyan-300"
+                      className="px-3 py-1.5 sm:px-4 sm:py-2 bg-slate-900/60 border border-cyan-500/30 rounded-lg text-xs sm:text-sm backdrop-blur font-mono text-cyan-300"
                       whileHover={{
                         scale: 1.1,
                         borderColor: "rgba(0, 229, 255, 0.6)",
@@ -683,17 +750,18 @@ const Portfolio = () => {
                   ))}
                 </div>
 
-                <ul className="space-y-3 mt-6 relative z-10">
+                {/* Features List */}
+                <ul className="space-y-3 mt-6">
                   {project.features.map((f, i) => (
                     <motion.li
                       key={i}
-                      className="text-gray-200 flex items-start font-mono"
+                      className="text-gray-200 flex items-start font-mono text-sm sm:text-base"
                       initial={{ x: -20, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
                       transition={{ delay: i * 0.1 }}
                     >
                       <motion.span
-                        className="text-cyan-400 font-bold mr-3"
+                        className="text-cyan-400 font-bold mr-3 flex-shrink-0"
                         animate={{ x: [0, 5, 0] }}
                         transition={{
                           duration: 1.5,
@@ -701,21 +769,22 @@ const Portfolio = () => {
                           delay: i * 0.2,
                         }}
                       >
-                        {'>>>'}
+                        {">>>"}
                       </motion.span>
                       {f}
                     </motion.li>
                   ))}
                 </ul>
 
+                {/* GitHub Button */}
                 <motion.a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 px-8 py-3 bg-slate-900/80 border-2 border-cyan-500 rounded-lg font-semibold block relative z-10 text-center font-mono text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                  className="mt-8 px-6 py-3 sm:px-8 sm:py-3 bg-slate-900/80 border-2 border-cyan-500 rounded-lg font-semibold block text-center font-mono text-cyan-400 hover:bg-cyan-500/20 transition-colors w-full sm:w-auto sm:inline-block"
                   whileHover={{ scale: 1.05 }}
                 >
-                  {'<'} VIEW_ON_GITHUB {'/>'} 
+                  {"<"} VIEW_ON_GITHUB {"/>"}
                 </motion.a>
               </motion.div>
             </motion.div>
@@ -794,8 +863,18 @@ const Portfolio = () => {
                 <motion.div
                   className={`p-8 rounded-2xl bg-gradient-to-br ${edu.bgGradient} border-2 ${edu.borderColor} backdrop-blur-lg shadow-2xl relative overflow-hidden h-full`}
                   whileHover={{
-                    boxShadow: `0 0 40px ${edu.borderColor.includes('blue') ? 'rgba(59, 130, 246, 0.4)' : edu.borderColor.includes('purple') ? 'rgba(168, 85, 247, 0.4)' : 'rgba(34, 197, 94, 0.4)'}`,
-                    borderColor: edu.borderColor.includes('blue') ? 'rgba(59, 130, 246, 0.8)' : edu.borderColor.includes('purple') ? 'rgba(168, 85, 247, 0.8)' : 'rgba(34, 197, 94, 0.8)',
+                    boxShadow: `0 0 40px ${
+                      edu.borderColor.includes("blue")
+                        ? "rgba(59, 130, 246, 0.4)"
+                        : edu.borderColor.includes("purple")
+                        ? "rgba(168, 85, 247, 0.4)"
+                        : "rgba(34, 197, 94, 0.4)"
+                    }`,
+                    borderColor: edu.borderColor.includes("blue")
+                      ? "rgba(59, 130, 246, 0.8)"
+                      : edu.borderColor.includes("purple")
+                      ? "rgba(168, 85, 247, 0.8)"
+                      : "rgba(34, 197, 94, 0.8)",
                   }}
                 >
                   <motion.div
@@ -818,8 +897,15 @@ const Portfolio = () => {
                   <p className="text-gray-300 mb-3 relative z-10 font-medium">
                     {edu.institution}
                   </p>
-                  <p className={`mb-4 relative z-10 flex items-center gap-2 font-mono ${edu.accentColor}`}>
-                    <span className={`w-2 h-2 ${edu.iconColor.replace('text-', 'bg-')} rounded-full`}></span>
+                  <p
+                    className={`mb-4 relative z-10 flex items-center gap-2 font-mono ${edu.accentColor}`}
+                  >
+                    <span
+                      className={`w-2 h-2 ${edu.iconColor.replace(
+                        "text-",
+                        "bg-"
+                      )} rounded-full`}
+                    ></span>
                     {edu.duration}
                   </p>
 
@@ -978,7 +1064,7 @@ const Portfolio = () => {
                   </>
                 ) : (
                   <>
-                    {'<'} SEND_MESSAGE {'/>'} 
+                    {"<"} SEND_MESSAGE {"/>"}
                     <Send size={20} />
                   </>
                 )}
@@ -1078,7 +1164,7 @@ const Portfolio = () => {
             repeat: Infinity,
           }}
         >
-          {'<'} DESIGNED & CRAFTED WITH ♥ BY RAJAT BAGADDEO {'/>'} 
+          {"<"} DESIGNED & CRAFTED WITH ♥ BY RAJAT BAGADDEO {"/>"}
         </motion.h3>
         <p className="text-gray-400 font-mono">
           © 2025 • ALL RIGHTS RESERVED • BUILT WITH REACT & FRAMER MOTION
